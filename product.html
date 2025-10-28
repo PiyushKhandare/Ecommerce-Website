@@ -29,7 +29,10 @@
           <!-- TODo: 22:20 -->
         </ul>
       </nav>
-      <a href="cart.html"><img src="images/cart.png" alt="" width="30px" height="30px" /></a>
+      <a href="cart.html" class="cart-link">
+  <img src="images/cart.png" alt="" width="30px" height="30px" />
+  <span id="cart-count" class="cart-count">0</span>
+</a>
       <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()" />
     </div>
   </div>
@@ -47,110 +50,160 @@
     </div>
 
     <div class="row">
-      <div class="col-4">
-        <img src="images/product-1.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-o"></i>
+        <div class="col-4">
+          <a href="product-details.html">
+            <img src="images/product-1.jpg" alt=""
+          /></a>
+          <h4>Red Printed T-shirt</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$50.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="Red Printed T-shirt" 
+  data-price="50" 
+  data-image="images/product-1.jpg">
+  Add to Cart
+</button>
         </div>
-        <p>$50.00</p>
-      </div>
+
+       <div class="col-4">
+          <img src="images/product-2.jpg" alt="" />
+          <h4>HRX Black Shoes</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$30.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="HRX Black Shoes" 
+  data-price="50" 
+  data-image="images/product-2.jpg">
+  Add to Cart
+</button>
+        </div>
 
       <div class="col-4">
-        <img src="images/product-2.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
-          <i class="fa fa-star-o"></i>
+          <img src="images/product-3.jpg" alt="" />
+          <h4>Grey Joggers</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+          <p>$80.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="Grey Joggers" 
+  data-price="50" 
+  data-image="images/product-3.jpg">
+  Add to Cart
+</button>
         </div>
-        <p>$50.00</p>
-      </div>
 
-      <div class="col-4">
-        <img src="images/product-3.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
+        <div class="col-4">
+          <img src="images/product-4.jpg" alt="" />
+          <h4>Blue Printed T-shirt</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$50.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="Blue Printed T-shirt" 
+  data-price="50" 
+  data-image="images/product-4.jpg">
+  Add to Cart
+</button>
         </div>
-        <p>$50.00</p>
-      </div>
-      <div class="col-4">
-        <img src="images/product-4.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-o"></i>
-        </div>
-        <p>$50.00</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <img src="images/product-5.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-o"></i>
-        </div>
-        <p>$50.00</p>
-      </div>
 
-      <div class="col-4">
-        <img src="images/product-6.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
-          <i class="fa fa-star-o"></i>
+  <div class="col-4">
+          <img src="images/product-5.jpg" alt="" />
+          <h4>HRX Grey Sneakers</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$100.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="HRX Grey Sneakers" 
+  data-price="50" 
+  data-image="images/product-5.jpg">
+  Add to Cart
+</button>
         </div>
-        <p>$50.00</p>
-      </div>
 
-      <div class="col-4">
-        <img src="images/product-7.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
+       <div class="col-4">
+          <img src="images/product-6.jpg" alt="" />
+          <h4>Puma Black T-shirt</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$40.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="Puma Black T-shirt" 
+  data-price="50" 
+  data-image="images/product-6.jpg">
+  Add to Cart
+</button>
         </div>
-        <p>$50.00</p>
-      </div>
-      <div class="col-4">
-        <img src="images/product-8.jpg" alt="" />
-        <h4>Red Printed T-shirt</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-o"></i>
+
+        <div class="col-4">
+          <img src="images/product-7.jpg" alt="" />
+          <h4>HRX Shoe Socks</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+          <p>$10.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="HRX Shoe Socks" 
+  data-price="50" 
+  data-image="images/product-7.jpg">
+  Add to Cart
+</button>
         </div>
-        <p>$50.00</p>
-      </div>
-    </div>
-    <div class="row">
+
+        <div class="col-4">
+          <img src="images/product-8.jpg" alt="" />
+          <h4>Fossil Watch</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$150.00</p>
+          <button class="add-to-cart-btn" 
+  data-name="Fossil Watch" 
+  data-price="50" 
+  data-image="images/product-8.jpg">
+  Add to Cart
+</button>
+        </div>
+    <!-- <div class="row">
       <div class="col-4">
         <img src="images/product-9.jpg" alt="" />
         <h4>Red Printed T-shirt</h4>
@@ -200,7 +253,7 @@
           <i class="fa fa-star-o"></i>
         </div>
         <p>$50.00</p>
-      </div>
+      </div> -->
     </div>
 
     <div class="page-btn">
@@ -230,8 +283,8 @@
         <div class="footer-col-2">
           <img src="images/logo-white.png" alt="" />
           <p>
-            Lorem, ipsum dolor sit amet consectetur <br />adipisicing elit.
-            Porro, eum?
+             Our goal is to provide you with a great shopping experience while ensuring that every product you purchase is
+            of the highest quality.
           </p>
         </div>
         <div class="footer-col-3">
@@ -259,7 +312,10 @@
     </div>
   </div>
   <!-- JS for Toggle menu -->
-  <script src="js/toggleMenu.js"></script>
+  <script src="toggleMenu.js"></script>
+  <script src="cart.js"></script>
+  <script src="userSession.js"></script>
+
 </body>
 
 </html>
