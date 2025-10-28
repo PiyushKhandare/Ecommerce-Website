@@ -1,0 +1,108 @@
+/* ===== About Page Styling ===== */
+
+.about-page {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Layout */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* Left column - Image */
+.about-page .col-2 {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* About image */
+.about-img {
+  width: 400px;
+  height:200px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Headings */
+.about-page h1 {
+  font-size: 40px;
+  color: #ff523b;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-page h2 {
+  font-size: 22px;
+  margin-top: 25px;
+  color: #111;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.about-page p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Values list */
+.about-page ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.about-page ul li {
+  background: url('https://cdn-icons-png.flaticon.com/512/32/32195.png') no-repeat left center;
+  background-size: 18px;
+  padding-left: 30px;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-page ul li:hover {
+  color: #ff523b;
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img {
+    max-width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .about-page h1 {
+    font-size: 32px;
+  }
+
+  .about-page h2 {
+    font-size: 20px;
+  }
+
+  .about-page p {
+    font-size: 15px;
+  }
+}
