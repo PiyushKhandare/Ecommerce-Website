@@ -15,11 +15,7 @@ function login() {
   Indicator.style.transform = "translateX(0px)";
 }
 
-// ----------- User Registration and Login System -----------
-const regFormEl = document.getElementById("RegForm");
-const loginFormEl = document.getElementById("LoginForm");
-
-// Floating message utility
+// ----------- Floating Popup Message Utility -----------
 function showAlert(message, type = "success") {
   const alert = document.createElement("div");
   alert.textContent = message;
@@ -38,7 +34,8 @@ function showAlert(message, type = "success") {
   setTimeout(() => alert.remove(), 3000);
 }
 
-// Save user data locally
+// ----------- User Registration -----------
+const regFormEl = document.getElementById("RegForm");
 regFormEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -52,21 +49,19 @@ regFormEl.addEventListener("submit", (e) => {
   }
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-
-  const userExists = users.some((user) => user.email === email);
-  if (userExists) {
+  if (users.some((user) => user.email === email)) {
     showAlert("User already registered!", "error");
     return;
   }
 
   users.push({ username, email, password });
   localStorage.setItem("users", JSON.stringify(users));
-
   showAlert("Registration successful! Please log in.", "success");
   setTimeout(() => login(), 700);
 });
 
-// Login + Remember Me
+// ----------- Login + Remember Me -----------
+const loginFormEl = document.getElementById("LoginForm");
 loginFormEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -80,7 +75,6 @@ loginFormEl.addEventListener("submit", (e) => {
   }
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
-
   const validUser = users.find(
     (user) =>
       (user.username === username || user.email === username) &&
@@ -88,64 +82,38 @@ loginFormEl.addEventListener("submit", (e) => {
   );
 
   if (validUser) {
-    // Save login info
     if (rememberMe) {
       localStorage.setItem("loggedInUser", JSON.stringify(validUser));
     } else {
       sessionStorage.setItem("loggedInUser", JSON.stringify(validUser));
     }
-
     showAlert(`Welcome back, ${validUser.username}!`, "success");
-    setTimeout(() => (window.location.href = "index.html"), 1500);
+    setTimeout(() => (window.location.href = "index.html"), 1200);
   } else {
     showAlert("Invalid credentials. Try again!", "error");
   }
 });
 
-// ----------- Auto Redirect if Already Logged In -----------
+// ----------- Check Login Status -----------
 const currentUser =
   JSON.parse(localStorage.getItem("loggedInUser")) ||
   JSON.parse(sessionStorage.getItem("loggedInUser"));
 
+// ----------- Prevent Sticky Popup on Return -----------
 if (currentUser && window.location.pathname.includes("account.html")) {
-  showAlert(`You're already logged in as ${currentUser.username}`, "success");
-  setTimeout(() => (window.location.href = "index.html"), 1500);
+  // Don’t show the popup every time — just auto-redirect quietly
+  window.location.replace("index.html");
 }
 
-// ----------- Logout Button Handling -----------
-function createLogoutButton() {
-  const nav = document.querySelector(".navbar nav ul");
-  if (!nav.querySelector("#logoutBtn")) {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="#" id="logoutBtn" style="color:red;font-weight:600;">Logout</a>`;
-    nav.appendChild(li);
-
-    li.addEventListener("click", () => {
-      localStorage.removeItem("loggedInUser");
-      sessionStorage.removeItem("loggedInUser");
-      showAlert("Logged out successfully!", "success");
-      setTimeout(() => (window.location.href = "account.html"), 1000);
-    });
-  }
-}
-
-if (currentUser) {
-  createLogoutButton();
-}
 
 // ----------- Responsive Menu Toggle -----------
 const MenuItems = document.getElementById("MenuItems");
 if (MenuItems) {
   MenuItems.style.maxHeight = "0px";
-
   function menutoggle() {
-    if (MenuItems.style.maxHeight === "0px") {
-      MenuItems.style.maxHeight = "200px";
-    } else {
-      MenuItems.style.maxHeight = "0px";
-    }
+    MenuItems.style.maxHeight =
+      MenuItems.style.maxHeight === "0px" ? "200px" : "0px";
   }
-
   window.menutoggle = menutoggle;
 }
 
