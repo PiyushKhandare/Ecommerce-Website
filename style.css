@@ -351,33 +351,31 @@
   
   /* Media Quer for menu */
   
-  @media only screen and (max-width: 800px) {
-    nav ul {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      background: #333;
-      width: 100%;
-      overflow: hidden;
-      transition: max-height 0.5s;
-    }
-  
-    nav ul li {
-      display: block;
-      margin-right: 50px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  
-    nav ul li a {
-      color: var(--main-bg-color);
-    }
-  
-    .menu-icon {
-      display: block;
-      cursor: pointer;
-    }
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0; /* hidden by default */
+    transition: max-height 0.4s ease-out;
   }
+
+  nav ul.open {
+    max-height: 300px; /* visible when toggled */
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 50px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
   
   /* All Products */
   .row-2 {
@@ -643,3 +641,32 @@
     transform: translateX(100px);
     transition: transform 1s;
   }
+    .cart-link {
+      position: relative;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+    .add-to-cart-btn {
+      display: inline-block;
+      background: #ff523b;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .add-to-cart-btn:hover {
+      background: #ff523b;
+    }
+  
